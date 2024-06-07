@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib import pyplot, cm
 
 
-def vizualize(file_path: str, return_type: str = "contour"):
+def visualize(file_path: str, return_type: str = "contour"):
     with open(file_path) as f:
         results = f.readlines()
 
@@ -56,7 +56,6 @@ def vizualize(file_path: str, return_type: str = "contour"):
 
         pyplot.xlabel('X')
         pyplot.ylabel('Y')
-        return fig
     else:
         fig = pyplot.figure(figsize=(11, 7), dpi=100)
         pyplot.contourf(X, Y, p, alpha=0.5, cmap=cm.viridis)
@@ -71,8 +70,6 @@ def vizualize(file_path: str, return_type: str = "contour"):
         pyplot.tight_layout()
 
         pyplot.savefig(f"streamline_{implementation_type}.png")
-
-        return fig
 
 
 def convert_gif(file_path: str):
