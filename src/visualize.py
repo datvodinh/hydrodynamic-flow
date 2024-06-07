@@ -37,12 +37,10 @@ def visualize(file_path: str, return_type: str = "contour"):
         for j in range(nx):
             p[i][j] = float(result[j])
 
+    x = np.linspace(0, xmax, nx)
+    y = np.linspace(0, ymax, ny)
+    X, Y = np.meshgrid(x, y)
     if return_type == "contour":
-        x = np.linspace(0, xmax, nx)
-        y = np.linspace(0, ymax, ny)
-
-        X, Y = np.meshgrid(x, y)
-
         fig = pyplot.figure(figsize=(11, 7), dpi=100)
         # plotting the pressure field as a contour
         pyplot.contourf(X, Y, p, alpha=0.5, cmap=cm.viridis)
