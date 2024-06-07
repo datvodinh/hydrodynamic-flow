@@ -15,10 +15,10 @@
 #define rho 1.0
 #define nu 0.1
 #define dt 0.001
-#define result_file_name "flow_results_cuda.txt"
+#define result_file_name "results_cuda.txt"
 #define display_num 10
-#define is_log 0
-#define log_file_name "flow_logs_cuda.log"
+#define is_log 1
+#define log_file_name "logs_cuda.log"
 #define log_step 50
 
 const int display_step = nt / display_num;

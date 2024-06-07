@@ -14,10 +14,10 @@
 #define rho 1.0
 #define nu 0.1
 #define dt 0.001
-#define result_file_name "flow_results.txt"
+#define result_file_name "results.txt"
 #define display_num 10
-#define is_log 0
-#define log_file_name "flow_logs.log"
+#define is_log 1
+#define log_file_name "logs.log"
 #define log_step 50
 
 const int display_step = nt / display_num;
@@ -47,11 +47,11 @@ void build_up_b(double *b, double *u, double *v, double dx, double dy)
 		for (j = 1; j < nx - 1; j++)
 		{
 			*(b + i * nx + j) = rho * (1 / dt *
-										   ((*(u + i * nx + j + 1) - *(u + i * nx + j - 1)) / (2 * dx) + (*(v + (i + 1) * nx + j) - *(v + (i - 1) * nx + j)) / (2 * dy)) -
-									   (*(u + i * nx + j + 1) - *(u + i * nx + j - 1)) * (*(u + i * nx + j + 1) - *(u + i * nx + j - 1)) / (2 * 2 * dx * dx) -
-									   2 * ((*(u + (i + 1) * nx + j) - *(u + (i - 1) * nx + j)) / (2 * dy) *
-											(*(v + i * nx + j + 1) - *(v + i * nx + j - 1)) / (2 * dx)) -
-									   (*(v + (i + 1) * nx + j) - *(v + (i - 1) * nx + j)) * (*(v + (i + 1) * nx + j) - *(v + (i - 1) * nx + j)) / (2 * 2 * dy * dy));
+			((*(u + i * nx + j + 1) - *(u + i * nx + j - 1)) / (2 * dx) + (*(v + (i + 1) * nx + j) - *(v + (i - 1) * nx + j)) / (2 * dy)) -
+		(*(u + i * nx + j + 1) - *(u + i * nx + j - 1)) * (*(u + i * nx + j + 1) - *(u + i * nx + j - 1)) / (2 * 2 * dx * dx) -
+		2 * ((*(u + (i + 1) * nx + j) - *(u + (i - 1) * nx + j)) / (2 * dy) *
+			(*(v + i * nx + j + 1) - *(v + i * nx + j - 1)) / (2 * dx)) -
+		(*(v + (i + 1) * nx + j) - *(v + (i - 1) * nx + j)) * (*(v + (i + 1) * nx + j) - *(v + (i - 1) * nx + j)) / (2 * 2 * dy * dy));
 		}
 	}
 }
