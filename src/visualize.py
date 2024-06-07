@@ -146,5 +146,5 @@ def convert_gif(file_path: str):
     images = []
     filenames = sorted(os.listdir(FOLDER_SAVE))
     for filename in filenames:
-        images.append(imageio.imread(filename))
+        images.append(imageio.imread(os.path.join(FOLDER_SAVE, filename)))
     imageio.mimsave('test.gif', images)
