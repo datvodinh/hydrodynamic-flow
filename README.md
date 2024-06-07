@@ -2,7 +2,7 @@
 
 ![Visualize](./assets/test.gif)
 
-# Run 
+## Run 
 
 - C
 
@@ -18,3 +18,12 @@ make flow_cuda
 ./flow_cuda
 ```
 
+## Member
+
+|Name|ID|
+|--|--|
+|Võ Đình Đạt |20214890|
+|Bùi Anh Nhật |20210657|
+|Trần Quốc Đệ |20210179|
+|Nguyễn Trung Trực |20214936|
+|Phạm Ngọc Quân |20210704|
