@@ -43,10 +43,10 @@ def visualize(file_path: str, return_type: str = "contour"):
     if return_type == "contour":
         fig = pyplot.figure(figsize=(11, 7), dpi=100)
         # plotting the pressure field as a contour
-        pyplot.contourf(X, Y, p, alpha=0.5, cmap=cm.viridis)
+        pyplot.contourf(X, Y, p, alpha=0.5, cmap=cm.inferno)
         pyplot.colorbar()
         # plotting the pressure field outlines
-        pyplot.contour(X, Y, p, cmap=cm.viridis)
+        pyplot.contour(X, Y, p, cmap=cm.inferno)
         # plotting velocity field
         pyplot.quiver(X, Y, u, v)
         implementation_type = "C" if ("cuda" not in file_path) else "CUDA"
@@ -56,9 +56,9 @@ def visualize(file_path: str, return_type: str = "contour"):
         pyplot.ylabel('Y')
     else:
         fig = pyplot.figure(figsize=(11, 7), dpi=100)
-        pyplot.contourf(X, Y, p, alpha=0.5, cmap=cm.viridis)
+        pyplot.contourf(X, Y, p, alpha=0.5, cmap=cm.inferno)
         # pyplot.colorbar()
-        pyplot.contour(X, Y, p, cmap=cm.viridis)
+        pyplot.contour(X, Y, p, cmap=cm.inferno)
         pyplot.streamplot(X, Y, u, v)
         implementation_type = "C" if ("cuda" not in file_path) else "CUDA"
         pyplot.title(f"{implementation_type} Streamlines Map at nt = {nt}, with dt = {dt}")
@@ -129,10 +129,10 @@ def convert_gif(file_path: str):
         vmin = -3.2
         vmax = 3.2
 
-        pyplot.contourf(X, Y, p, alpha=0.5, cmap=cm.viridis, vmin=vmin, vmax=vmax)
+        pyplot.contourf(X, Y, p, alpha=0.5, cmap=cm.inferno, vmin=vmin, vmax=vmax)
         # pyplot.colorbar()
         # plotting the pressure field outlines
-        pyplot.contour(X, Y, p, cmap=cm.viridis)
+        pyplot.contour(X, Y, p, cmap=cm.inferno)
         # plotting velocity field
         pyplot.quiver(X, Y, u, v)
         pyplot.title(f"Countour Map at nt = {step}, with dt = {dt}")
